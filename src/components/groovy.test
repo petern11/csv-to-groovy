@@ -1,0 +1,382 @@
+import info.magnolia.context.MgnlContext
+import info.magnolia.jcr.util.NodeUtil
+import javax.jcr.Node;
+import info.magnolia.jcr.util.SessionUtil
+
+// Define parent path once at the top
+def parentPath = "/vax"  // Remove trailing slash if present
+
+// Get website workspace
+def workspace = SessionUtil.getSession("website")
+def rootNode = workspace.getRootNode()
+
+// Create page: Cholera
+
+def pageName = "cholera"
+
+// Create page node
+def page0 = NodeUtil.createPath(rootNode, parentPath + "/" + pageName, "mgnl:page")
+page0.setProperty("mgnl:template", "your-template-name")  // Set your template name
+
+// Set page properties
+page0.setProperty("title", """Cholera""")
+    page0.setProperty("abstract", """Cholera is an acute, diarrhoeal illness caused by infection of the intestine with the bacterium Vibrio cholerae and is spread by ingestion of contaminated food or water. The infection is often mild or without symptoms, but can sometimes be severe. Approximately 1 in 10 infected persons have severe disease. In these people, rapid loss of body fluids leads to dehydration and shock. Without treatment, death can occur within hours.1""")
+    // Set tags
+def tagList = """travel""".split(',')
+page0.setProperty("tags", tagList as String[])
+    page0.setProperty("textContent", """<div class=\"scroll-container\">
+                  
+                                                              <div data-scroll=\"Overview\">
+                        <div class=\"row center-xs\">
+                          <div class=\"col-xs-12 col-sm-10 col-md-9 vaccine-disease-article-row\">
+
+                                                          <h3>
+                                Overview
+                              </h3>
+                            
+                                                          <p>Cholera is an acute, diarrhoeal illness caused by infection of the intestine with the bacterium <em>Vibrio cholerae </em>and is spread by ingestion of contaminated food or water. The infection is often mild or without symptoms, but can sometimes be severe. Approximately 1 in 10 infected persons have severe disease. In these people, rapid loss of body fluids leads to dehydration and shock. Without treatment, death can occur within hours.<sup>1</sup></p>
+
+<p>Researchers have estimated that each year there are 1.3 to 4.0 million cases of cholera, and 21,000 to 143,000 deaths worldwide due to cholera. Cholera vaccines can be used in conjunction with improvements in water and sanitation to control cholera outbreaks and for prevention in areas known to be high risk for cholera. Most cases can be successfully treated with oral rehydration solution, however, severe cases need rapid treatment with intravenous fluids and antibiotics.<sup>2</sup></p>
+
+
+                          </div>
+                                                  </div>
+                      </div>
+                    
+                  
+                                                              <div data-scroll=\"Signs-and-symptoms\">
+                        <div class=\"row center-xs\">
+                          <div class=\"col-xs-12 col-sm-10 col-md-9 vaccine-disease-article-row\">
+
+                                                          <h3>
+                                Signs and symptoms
+                              </h3>
+                            
+                                                          <p>The incubation period for the cholera is 12 hours to 5 days. Most people infected with <em>V. cholerae</em> do not develop any symptoms, although the bacteria are present in their faeces for 1-10 days after infection and are shed back into the environment, potentially infecting other people. Of those who develop symptoms, these are mild to moderate and can be treated with oral rehydration fluids.<sup>2</sup></p>
+
+<p>However, others will develop acute watery diarrhoea (also called ‘rice water stools’) with severe dehydration which can lead to death if untreated. Other symptoms of severe disease include vomiting, tachycardia, loss of skin elasticity, low blood pressure, muscle cramps, restlessness or irritability.<sup>1</sup></p>
+
+
+                          </div>
+                                                      <div class=\"col-xs-12 col-sm-10 col-md-9\">
+                              
+                            </div>
+                                                  </div>
+                      </div>
+                    
+                  
+                                        
+                  
+                                                              <div data-scroll=\"Diagnosis\">
+                        <div class=\"row center-xs\">
+                          <div class=\"col-xs-12 col-sm-10 col-md-9 vaccine-disease-article-row\">
+
+                                                          <h3>
+                                Diagnosis
+                              </h3>
+                            
+                                                          <p>It is almost impossible to distinguish a single patient with cholera from a patient infected by another pathogen that causes acute watery diarrhoea without testing a stool sample. Isolation and identification of <em>Vibrio cholerae</em> serogroup O1 or O139 by culture of a stool specimen remains the gold standard for the laboratory diagnosis of cholera. In areas with limited to no laboratory testing, the Crystal VC® dipstick rapid test can provide an early warning to public health officials that an outbreak of cholera is occurring. However, due to low sensitivity and specificity of the test, it should be confirmed using traditional culture-based methods suitable for the isolation and identification of <em>V. cholerae</em>.<sup>1</sup></p>
+
+
+                          </div>
+                                                  </div>
+                      </div>
+                    
+                  
+                                                              <div data-scroll=\"Prevention\">
+                        <div class=\"row center-xs\">
+                          <div class=\"col-xs-12 col-sm-10 col-md-9 vaccine-disease-article-row\">
+
+                                                          <h3>
+                                Prevention
+                              </h3>
+                            
+                                                          <p>A combination of surveillance, provision of safe water, sanitation and hygiene promotion and oral cholera vaccines are used to prevent the disease.<sup>2&nbsp;&nbsp;</sup>Vaccination against cholera is not an official requirement for entry into any foreign country. Cholera vaccination is not routinely recommended as the risk to travellers is very low, despite the endemicity of cholera in some countries often visited by Australians. Careful and sensible selection of food and water is of far greater importance to the traveller than cholera vaccination.<sup>3</sup></p>
+
+<p>An oral cholera vaccine is available in Australia for adults and children aged 2 years and older, and should be considered for the following travellers:<sup>3</sup></p>
+
+<ul>
+	<li>travellers with a high risk of exposure, including, humanitarian aid workers deployed where there is an endemic outbreak of cholera</li>
+	<li>travellers to areas where cholera exists who have a high risk of acquiring diarrhoeal disease due to an underlying medical condition (eg. achlorhydria)</li>
+	<li>travellers to areas where cholera exists who have a higher risk of severe complications from diarrhoeal disease (eg. inflammatory bowel disease, poorly controlled or complicated diabetes, HIV or other immunocompromising conditions, significant cardiovascular disease).</li>
+</ul>
+
+
+                          </div>
+                                                  </div>
+                      </div>
+                    
+                  
+                                                              <div data-scroll=\"Bacteriology\">
+                        <div class=\"row center-xs\">
+                          <div class=\"col-xs-12 col-sm-10 col-md-9 vaccine-disease-article-row\">
+
+                                                          <h3>
+                                Bacteriology
+                              </h3>
+                            
+                                                          <p><em>Vibrio cholerae</em> is a motile, curved gram-negative bacillus with more than 150 serogroups based on differences in the O antigens. Cholera is caused by enterotoxin-producing <em>V. cholerae</em> of serogroups O1 and O139. The bacteria can survive under unfavourable conditions in a viable dormant state and are transmitted predominantly by ingestion of faecally contaminated food or water.<sup>3&nbsp;&nbsp;</sup>Only toxigenic strains of serogroups O1 and O139 have caused widespread epidemics and are reportable to the WHO as “cholera”. Serogroup O1 includes two biotypes (classical and El Tor), each of which includes two distinct serotypes, Inaba and Ogawa.<sup>1</sup></p>
+
+
+                          </div>
+                                                  </div>
+                      </div>
+                    
+                  
+                                                              <div data-scroll=\"Epidemiology\">
+                        <div class=\"row center-xs\">
+                          <div class=\"col-xs-12 col-sm-10 col-md-9 vaccine-disease-article-row\">
+
+                                                          <h3>
+                                Epidemiology
+                              </h3>
+                            
+                                                          <p>Cholera can be endemic or epidemic. A cholera outbreak/epidemic can occur in both endemic countries and in countries where cholera does not regularly occur.<sup>2</sup> It is considered endemic in Haiti, south and south-east Asia and sub-saharan Africa.<sup>3&nbsp;</sup></p>
+
+<p>Almost all the cases of cholera reported in Australia (about 2 to 6 cases a year) occur in individuals who have been infected in endemic areas overseas. In 1977, a locally acquired case led to the discovery of <em>V. cholerae</em> in some rivers of the Queensland coast , which indicated that health workers should be aware that sporadic cases may occur rarely following contact with estuarine waters. All cases of cholera reported since the commencement of the National Notifiable Diseases Surveillance System in 1991 have been acquired outside Australia, except for 1 case in 1996 which was laboratory-acquired and 3 cases in 2006 reported in Sydney, which were associated with consumption of raw imported whitebait in patients who had no history of recent travel to known cholera-endemic areas.<sup>3</sup></p>
+
+
+                          </div>
+                                                  </div>
+                      </div>
+                    
+                  
+                                        
+                  
+                                                              <div data-scroll=\"Treatment\">
+                        <div class=\"row center-xs\">
+                          <div class=\"col-xs-12 col-sm-10 col-md-9 vaccine-disease-article-row\">
+
+                                                          <h3>
+                                Treatment
+                              </h3>
+                            
+                                                          <p>The majority of people who develop cholera can be treated successfully through prompt administration of oral rehydration solution (ORS). Severely dehydrated patients are at risk of shock and require the rapid administration of intravenous fluids. These patients are also given appropriate antibiotics to diminish the duration of diarrhoea, reduce the volume of rehydration fluids needed, and shorten the amount and duration of <em>V. cholerae</em> excretion in their stool.<sup>2</sup></p>
+
+
+                          </div>
+                                                  </div>
+                      </div>
+                    
+                  
+                                        
+                  
+                  <div class=\"row center-xs\">
+                    <div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">
+                      <div class=\"citations-sources accordian-component\">
+  <div class=\"citations-sources-heading accordian-toggle\">
+    References
+    <span class=\"icon-closed icon icon-dropdown\"></span>
+    <span class=\"icon-open icon icon-chevron-up\"></span>
+  </div>
+
+  <div class=\"accordian-expand\">
+          <p>1. Cholera. Centers for Disease Control and Prevention. www.cdc.gov/cholera/index.html. (Accessed August 2021)<br>
+2. Cholera. World Health Organization Fact Sheet. www.who.int/en/news-room/fact-sheets/detail/cholera (Accessed August 2021).<br>
+3. Australian Immunisation Handbook 10th edition. Australian Govt. Department of health. https://immunisationhandbook.health.gov.au/vaccine-preventable-diseases/cholera (Accessed August 2021)</p>
+
+<p>MAT-AU-2101800&nbsp; &nbsp;Date of preparation&nbsp; August 2021<br>
+&nbsp;</p>
+
+      </div>
+</div>
+
+                                              <div class=\"article-tags\">
+                          <strong>Tags:</strong>
+                          
+  <a href=\"/tags/travel\" hreflang=\"en\" shenjian-fields=\"\">travel</a>,  <a href=\"/tags/adults\" hreflang=\"en\">adults</a>
+                        </div>
+                                          </div>
+                  </div>
+                </div>""")
+
+// Activate the page
+def pageNode0 = NodeUtil.unwrap(page0)
+ActivationManager.activate(pageNode0)
+
+// Create page: Diphtheria
+
+def pageName = "diphtheria"
+
+// Create page node
+def page1 = NodeUtil.createPath(rootNode, parentPath + "/" + pageName, "mgnl:page")
+page1.setProperty("mgnl:template", "your-template-name")  // Set your template name
+
+// Set page properties
+page1.setProperty("title", """Diphtheria""")
+    page1.setProperty("abstract", """Diphtheria is an infectious disease caused by the bacterium Corynebacterium diphtheriae, which primarily infects the throat and upper airways, and produces a toxin affecting other organs.""")
+    // Set tags
+def tagList = """pediatric""".split(',')
+page1.setProperty("tags", tagList as String[])
+    page1.setProperty("textContent", """<div class=\"scroll-container\">
+                  
+                                                              <div data-scroll=\"Overview\">
+                        <div class=\"row center-xs\">
+                          <div class=\"col-xs-12 col-sm-10 col-md-9 vaccine-disease-article-row\">
+
+                                                          <h3>
+                                Overview
+                              </h3>
+                            
+                                                          <p><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:11.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">Diphtheria is an infectious disease caused by the bacterium Corynebacterium diphtheriae, which primarily infects the throat and upper airways, and produces a toxin affecting other organs. The inflammatory exudate that forms a greyish or green membrane in the upper respiratory tract can cause acute severe respiratory obstruction. The disease spreads by aerosol transmission or by direct contact with skin lesions or articles soiled by infected persons.</span></span></span></span><sup><span style=\"font-size:8.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">1</span></span></span></span></sup><span style=\"font-size:11.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">&nbsp;Vaccines are recommended for infants, children, teenagers and adults to prevent diphtheria.</span></span></span></span><sup><span style=\"font-size:8.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">1</span></span></span></span></sup><span style=\"font-size:11.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">&nbsp;Treatment involves administering diphtheria antitoxin to neutralize the effects of the toxin, as well as antibiotics to kill the bacteria.</span></span></span></span><sup><span style=\"font-size:8.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">2</span></span></span></span></sup></span></span></span></span></p>
+
+
+                          </div>
+                                                  </div>
+                      </div>
+                    
+                  
+                                                              <div data-scroll=\"Signs-and-symptoms\">
+                        <div class=\"row center-xs\">
+                          <div class=\"col-xs-12 col-sm-10 col-md-9 vaccine-disease-article-row\">
+
+                                                          <h3>
+                                Signs and symptoms
+                              </h3>
+                            
+                                                          <p><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:11.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">Infection can cause respiratory or cutaneous diphtheria, and in rare cases can lead to systemic diphtheria. Depending on the anatomical location, respiratory disease may be nasal, pharyngeal, or laryngeal, or any combination of these. Pharyngeal diphtheria is the most common form. Respiratory diphtheria usually occurs after an incubation period 2 to 5 days.</span></span></span></span><sup><span style=\"font-size:8.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">2</span></span></span></span></sup><span style=\"font-size:11.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">&nbsp;Diphtheria spreads by aerosol transmission or by direct contact with skin lesions or articles soiled by infected persons.</span></span></span></span><sup><span style=\"font-size:8.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">1</span></span></span></span></sup></span></span></span></span></p>
+
+<p><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:11.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">Respiratory diphtheria has a gradual onset of symptoms which can include mild fever, sore throat, difficulty swallowing, malaise and loss of appetite. The hallmark of respiratory diphtheria is a pseudomembrane that appears within 2–3 days of illness over the mucous lining of the upper respiratory tract. The pseudomembrane is firm, fleshy, grey, and adherent; it typically will bleed after attempts to remove or dislodge it. Fatal airway obstruction can result if the pseudomembrane extends into the larynx or trachea or if a piece of it becomes dislodged.&nbsp;Diphtheria is fatal in 5 - 10% of cases.</span></span></span></span><sup><span style=\"font-size:8.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">3</span></span></span></span></sup><span style=\"font-size:11.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">&nbsp;Absorption of diphtheria toxin into the bloodstream results in toxic damage to organs such as the heart, kidneys and peripheral nerves.</span></span></span></span><sup><span style=\"font-size:8.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">2</span></span></span></span></sup>&nbsp;</span></span></span></span></p>
+
+<p><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:11.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">The disease is communicable for up to 4 weeks, but carriers may shed organisms for longer.</span></span></span></span><sup><span style=\"font-size:8.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">1</span></span></span></span></sup></span></span></span></span></p>
+
+
+                          </div>
+                                                      <div class=\"col-xs-12 col-sm-10 col-md-9\">
+                              
+                            </div>
+                                                  </div>
+                      </div>
+                    
+                  
+                                        
+                  
+                                                              <div data-scroll=\"Diagnosis\">
+                        <div class=\"row center-xs\">
+                          <div class=\"col-xs-12 col-sm-10 col-md-9 vaccine-disease-article-row\">
+
+                                                          <h3>
+                                Diagnosis
+                              </h3>
+                            
+                                                          <p><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:11.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">Diphtheria is usually diagnosed by the presence of clinical symptoms characteristic of the disease. However, bacterial culture is the mainstay of etiological diagnosis. Material for culture should be obtained preferably from the edges of the mucosal lesions and inoculated onto appropriate selective media. Identification of C. diphtheriae should be based on detection of the diphtheria toxin gene directly in clinical specimens using polymerase chain reaction techniques.</span></span></span></span><sup><span style=\"font-size:8.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">2</span></span></span></span></sup></span></span></span></span></p>
+
+
+                          </div>
+                                                  </div>
+                      </div>
+                    
+                  
+                                                              <div data-scroll=\"Prevention\">
+                        <div class=\"row center-xs\">
+                          <div class=\"col-xs-12 col-sm-10 col-md-9 vaccine-disease-article-row\">
+
+                                                          <h3>
+                                Prevention
+                              </h3>
+                            
+                                                          <p style=\"margin-top:13px; margin-bottom:13px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:11.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">Diphtheria can be prevented through immunisation. Diphtheria toxoid containing vaccines are available in Australia only in combination with tetanus, with or without other antigens such as<br>
+pertussis, inactivated poliomyelitis, hepatitis B and Haemophilus influenzae type b. Vaccines containing diphtheria toxoid are recommended for infants, children, teens and adults to prevent diphtheria. The formulations available for children aged &lt;10 years include Hexaxim, Infanrix, Infanrix hexa, Vaxelis, Infanrix IPV, Quadracel and Tripacel. Reduced antigen formulations for adults, adolescents and children aged ≥10 years include ADT Booster, Adacel, Adacel Polio, Boostrix, Boostrix-IPV.</span></span></span></span><sup><span style=\"font-size:8.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">1</span></span></span></span></sup></span></span></span></span></p>
+
+<p><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:11.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">For close contacts of patients, age appropriate diphtheria toxoid booster should be given along with appropriate prophylactic antibiotics to prevent spread of infection.&nbsp;&nbsp;See the Immunisation Handbook for further information on recommendations.</span></span></span></span><sup><span style=\"font-size:8.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">1</span></span></span></span></sup></span></span></span></span></p>
+
+
+                          </div>
+                                                  </div>
+                      </div>
+                    
+                  
+                                                              <div data-scroll=\"Bacteriology\">
+                        <div class=\"row center-xs\">
+                          <div class=\"col-xs-12 col-sm-10 col-md-9 vaccine-disease-article-row\">
+
+                                                          <h3>
+                                Bacteriology
+                              </h3>
+                            
+                                                          <p><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:11.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">Diphtheria is an acute illness caused by toxigenic strains of Corynebacterium diphtheriae, a Gram-positive, non-sporing, non-capsulate bacillus. The exotoxin produced by C. diphtheriae acts locally on the mucous membranes of the respiratory tract or, less commonly, on damaged skin, to produce an adherent pseudomembrane. Systemically, the toxin acts on cells of the myocardium, nervous system and adrenals.</span></span></span></span><sup><span style=\"font-size:8.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">1</span></span></span></span></sup></span></span></span></span></p>
+
+
+                          </div>
+                                                  </div>
+                      </div>
+                    
+                  
+                                                              <div data-scroll=\"Epidemiology\">
+                        <div class=\"row center-xs\">
+                          <div class=\"col-xs-12 col-sm-10 col-md-9 vaccine-disease-article-row\">
+
+                                                          <h3>
+                                Epidemiology
+                              </h3>
+                            
+                                                          <p><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:11.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">Vaccination against diphtheria has reduced the mortality and morbidity of diphtheria dramatically, however diphtheria is still a significant child health problem in countries with poor vaccination coverage.</span></span></span></span><sup><span style=\"font-size:8.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">2</span></span></span></span></sup>&nbsp;</span></span></span></span></p>
+
+<p><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:11.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">In the decade between 1926 and 1935 over 4,000 deaths from diphtheria were reported in Australia. A vaccine for diphtheria was introduced in Australia in 1932, and since then both cases and deaths have virtually disappeared. Serosurveillance data indicate more than 99% of Australian children are immune to diphtheria. However, waning immunity amongst adults may result in this population being susceptible, with the most likely source of exposure being through overseas travel to countries where diphtheria remains endemic.</span></span></span></span><sup><span style=\"font-size:8.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">4</span></span></span></span></sup>&nbsp;</span></span></span></span></p>
+
+<p><span style=\"font-size:11.5pt\"><span style=\"line-height:107%\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">Between 1999 and 2019 there were two deaths reported in unvaccinated adults, who had both acquired the infection in Australia. In 2022 a case of respiratory diphtheria was reported in an unvaccinated toddler and a 6-year old child who was a close contact. Otherwise the majority of cases reported in Australia were acquired overseas</span></span></span></span></span>.<sup>1</sup></p>
+
+
+                          </div>
+                                                  </div>
+                      </div>
+                    
+                  
+                                        
+                  
+                                                              <div data-scroll=\"Treatment\">
+                        <div class=\"row center-xs\">
+                          <div class=\"col-xs-12 col-sm-10 col-md-9 vaccine-disease-article-row\">
+
+                                                          <h3>
+                                Treatment
+                              </h3>
+                            
+                                                          <p><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:11.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">Urgent treatment of diphtheria is mandatory to reduce complications and mortality. The mainstay of treatment is intramuscular or intravenous administration of diphtheria antitoxin. Antibiotics (penicillin or erythromycin) should be given for 14 days to limit further bacterial growth and the duration of corynebacterial carriage that often persists even after clinical recovery.</span></span></span></span><sup><span style=\"font-size:8.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">2</span></span></span></span></sup><span style=\"font-size:11.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">&nbsp;Patient should be placed in isolation. Respiratory support and airway maintenance should also be administered as needed.</span></span></span></span><sup><span style=\"font-size:8.5pt\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">3</span></span></span></span></sup></span></span></span></span></p>
+
+
+                          </div>
+                                                  </div>
+                      </div>
+                    
+                  
+                                        
+                  
+                  <div class=\"row center-xs\">
+                    <div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">
+                      <div class=\"citations-sources accordian-component\">
+  <div class=\"citations-sources-heading accordian-toggle\">
+    References
+    <span class=\"icon-closed icon icon-dropdown\"></span>
+    <span class=\"icon-open icon icon-chevron-up\"></span>
+  </div>
+
+  <div class=\"accordian-expand\">
+          <p class=\"MsoEndnoteText\" style=\"margin: 0cm 0cm 0.0001pt;\">1.&nbsp;<span style=\"font-size:11.5pt\"><span style=\"line-height:107%\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">Australian Immunisation Handbook, Diphtheria. Available at: https://immunisationhandbook.health.gov.au/vaccine-preventable-diseases/diphtheria. Accessed March 1 2024</span></span></span></span></span><br>
+2. <span style=\"font-size:11.5pt\"><span style=\"line-height:107%\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">Diphtheria vaccine – World Health Organization (WHO) position paper. WHO. Weekly epidemiological record No. 3. 2006; 81: 24–31.</span></span></span></span></span><br>
+3. <span style=\"font-size:11.5pt\"><span style=\"line-height:107%\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">CDC. Yellow Book. Chapter 4 Diphtheria. </span></span></span></span></span><span style=\"font-size:11.0pt\"><span style=\"line-height:107%\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\"><a href=\"https://wwwnc.cdc.gov/travel/yellowbook/2020/travel-related-infectious-diseases/diphtheria\" style=\"color:#0563c1; text-decoration:underline\" data-lightbox=\"leavesite\"><span style=\"font-size:11.5pt\"><span style=\"line-height:107%\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"letter-spacing:-.35pt\">https://wwwnc.cdc.gov/travel/yellowbook/2020/travel-related-infectious-diseases/diphtheria</span></span></span></span></a></span></span></span><span style=\"font-size:11.5pt\"><span style=\"line-height:107%\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">. Accessed March 1 2024</span></span></span></span></span></p>
+
+<p class=\"MsoEndnoteText\" style=\"margin: 0cm 0cm 0.0001pt;\">4. <span style=\"font-size:11.5pt\"><span style=\"line-height:107%\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">NNDSS Annual Report Writing Group. Australia's notifiable disease status, 2011: Annual report of the National Notifiable Diseases Surveillance System. Communicable Diseases Intelligence. 2013;37:E313-393.</span></span></span></span></span></p>
+
+<p class=\"MsoEndnoteText\" style=\"margin: 0cm 0cm 0.0001pt;\">&nbsp;</p>
+
+<p class=\"MsoEndnoteText\" style=\"margin: 0cm 0cm 0.0001pt;\"><span style=\"font-size:11.5pt\"><span style=\"line-height:107%\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">MAT-AU-2400462-1.0 </span></span></span></span></span>&nbsp; &nbsp;<span style=\"font-size:11.5pt\"><span style=\"line-height:107%\"><span style=\"font-family:&quot;Helvetica&quot;,sans-serif\"><span style=\"color:#666666\"><span style=\"letter-spacing:-.35pt\">March 2024</span></span></span></span></span></p>
+
+      </div>
+</div>
+
+                                              <div class=\"article-tags\">
+                          <strong>Tags:</strong>
+                          
+  <a href=\"/tags/pediatric\" hreflang=\"en\" shenjian-fields=\"\">pediatric</a>,  <a href=\"/tags/children\" hreflang=\"en\">children</a>,  <a href=\"/tags/adults\" hreflang=\"en\">adults</a>
+                        </div>
+                                          </div>
+                  </div>
+                </div>""")
+
+// Activate the page
+def pageNode1 = NodeUtil.unwrap(page1)
+ActivationManager.activate(pageNode1)
+
+// Save changes
+workspace.save()
